@@ -33,15 +33,16 @@ public class CreateServlet extends HttpServlet {
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String _token = (String)request.getParameter("_token");
-        if(_token != null && _token.equals(request.getSession().getId())){
+        if(_token != null && _token.equals(request.getSession().getId())) {
             EntityManager em = DBUtil.createEntityManager();
 
-            tasks t =new tasks();
+            tasks t = new tasks();
+
 
             String content = request.getParameter("content");
             t.setContent(content);
 
-            Timestamp currentTime =new Timestamp(System.currentTimeMillis());
+            Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             t.setCreated_at(currentTime);
             t.setUpdated_at(currentTime);
 
@@ -51,7 +52,6 @@ public class CreateServlet extends HttpServlet {
             em.close();
 
             response.sendRedirect(request.getContextPath() + "/index");
-
         }
     }
 
