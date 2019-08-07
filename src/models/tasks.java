@@ -28,7 +28,7 @@ private Integer id;
 @Column(name = "content", length = 255, nullable = false)
 private String content;
 
-@Column(name = "created_at",nullable = false)
+@Column(name = "created_at", nullable = false)
 private Timestamp created_at;
 
 @Column(name = "updated_at", nullable = false)
@@ -47,19 +47,19 @@ public Integer getId(){
     public void setContent(String content){
         this.content = content;
     }
-    public Timestamp getCreated_at(){
+    public Timestamp getCreated_at() {
         return created_at;
     }
-    public void setCreated_at(Timestamp created_at){
+
+    public void setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
     }
-    public Timestamp getUpdated_at(){
+
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
-    public void setUpdated_at(Timestamp updated_at){
+
+    public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
-
-
-
 }
